@@ -26,11 +26,10 @@ enterlogin.place(width=200, height=30,)
 root.mainloop()
 
 class Hotel:
-    def __init__(self, customer, room, employee, service, hotelsystem, ia):
+    def __init__(self, customer, room, employee, service, hotelsystem):
         self.customer = customer
         self.room = room
         self.employee = employee
         self.service = service
         self.hotelsystem = hotelsystem
-        self.ia = ia
 
