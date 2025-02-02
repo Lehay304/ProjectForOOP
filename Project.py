@@ -12,19 +12,17 @@ class LoginWindow:
         self.style = ttk.Style()
         self.style.theme_use("clam")
 
-        self.label_username = ttk.Label(master, text='Логин')
-        self.label_password = ttk.Label(master, text='Пароль')
+        ttk.Label(master, text="Логин").grid(row=0, column=0, padx=10, pady=5, sticky=tk.W)
+        ttk.Label(master, text="пароль").grid(row=1, column=0, padx=10, pady=5, sticky=tk.W)
+
         self.entry_username = ttk.Entry(master)
         self.entry_password = ttk.Entry(master, show="*")
-        self.button_login = ttk.Button(master, text = 'Войти', command = self.login)
-        self.button_registration = ttk.Button(master, text = 'Регистрация', command = self.open_registration)
-
-        self.label_username.grid(row=0, column=0, padx=10, pady=5, sticky=tk.W)
-        self.label_password.grid(row=1, column=0, padx=10, pady=5, sticky=tk.W)
         self.entry_username.grid(row=0, column=1, padx=10, pady=5)
         self.entry_password.grid(row=1, column=1, padx=10, pady=5)
-        self.button_login.grid(row=2, column=0, columnspan=2, pady=10)
-        self.button_registration.grid(row=3, column=0, columnspan=2)
+
+
+        ttk.Button(master, text = 'Войти', command = self.login).grid(row=2, column=0, columnspan=2, pady=10)
+        ttk.Button(master, text = 'Регистрация', command = self.open_registration).grid(row=3, column=0, columnspan=2)
 
     def login(self):
         username = self.entry_username.get()
