@@ -1,1 +1,7 @@
-{"lehay": "123"}
+{
+    "Lehay": {
+        "password": "123",
+        "first_name": "asd",
+        "last_name": "asddsa"
+    }
+}
