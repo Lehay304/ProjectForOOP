@@ -1,0 +1,100 @@
+<ScreenManagement>:
+    LoginScreen:
+        name: 'login'
+    RegisterScreen:
+        name: 'register'
+    WelcomeScreen:
+        name: 'welcome'
+
+<LoginScreen>:
+    username: username_input
+    password: password_input
+    
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 50
+        spacing: 20
+        
+        Label:
+            text: 'Вход в систему'
+            font_size: 32
+            
+        TextInput:
+            id: username_input
+            hint_text: 'Логин'
+            size_hint_y: None
+            height: 40
+            
+        TextInput:
+            id: password_input
+            hint_text: 'Пароль'
+            password: True
+            size_hint_y: None
+            height: 40
+            
+        Button:
+            text: 'Войти'
+            size_hint_y: None
+            height: 40
+            on_press: root.login()
+            
+        Button:
+            text: 'Регистрация'
+            size_hint_y: None
+            height: 40
+            on_press: root.manager.current = 'register'
+
+<RegisterScreen>:
+    username: username_input
+    password: password_input
+    
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 50
+        spacing: 20
+        
+        Label:
+            text: 'Регистрация'
+            font_size: 32
+            
+        TextInput:
+            id: username_input
+            hint_text: 'Логин'
+            size_hint_y: None
+            height: 40
+            
+        TextInput:
+            id: password_input
+            hint_text: 'Пароль'
+            password: True
+            size_hint_y: None
+            height: 40
+            
+        Button:
+            text: 'Зарегистрироваться'
+            size_hint_y: None
+            height: 40
+            on_press: root.register()
+            
+        Button:
+            text: 'Назад'
+            size_hint_y: None
+            height: 40
+            on_press: root.manager.current = 'login'
+
+<WelcomeScreen>:
+    label: welcome_label
+    
+    BoxLayout:
+        orientation: 'vertical'
+        
+        Label:
+            id: welcome_label
+            text: 'Добро пожаловать!'
+            font_size: 32
+            
+        Button:
+            text: 'Выйти'
+            size_hint_y: None
+            height: 40
+            on_press: root.manager.current = 'login'
