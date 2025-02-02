@@ -24,6 +24,7 @@ class LoginWindow:
         ttk.Button(master, text = 'Войти', command = self.login).grid(row=2, column=0, columnspan=2, pady=10)
         ttk.Button(master, text = 'Регистрация', command = self.open_registration).grid(row=3, column=0, columnspan=2)
 
+
     def login(self):
         username = self.entry_username.get()
         password = self.entry_password.get()
@@ -32,11 +33,13 @@ class LoginWindow:
             messagebox.showwarning("Ошибка", "Все поля должны быть зарлнены")
             return
         user_data = self.check_credentials(username, password)
+
         if user_data:
             self.master.destroy()
             self.open_main_app(user_data)
         else:
             messagebox.showerror("Ошибка", "Неверный логин или пароль")
+
 
     def check_credentials(self, username, password):
         try:
@@ -49,13 +52,17 @@ class LoginWindow:
             return False
         return False
 
+
     def open_registration(self):
         RegistrationWindow(tk.Toplevel(self.master))
+
 
     def open_main_app(self, user_data):
         root = tk.Tk()
         MainApplication(root, user_data)
         root.mainloop()
+
+
 
 class RegistrationWindow:
     def __init__(self, master):
@@ -81,7 +88,6 @@ class RegistrationWindow:
 
         ttk.Button(master, text="Зарегистрироваться", command=self.register).grid(row=5, column=0, columnspan=2, pady=10)
         
-
 
     def register(self):
         data = {
