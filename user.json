@@ -3,5 +3,10 @@
         "password": "123",
         "first_name": "asd",
         "last_name": "asddsa"
+    },
+    "1": {
+        "password": "1",
+        "first_name": "1",
+        "last_name": "2"
     }
 }

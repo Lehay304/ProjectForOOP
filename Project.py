@@ -130,13 +130,27 @@ class RegistrationWindow:
 class MainApplication:
     def __init__(self, master, user_data):
         self.master = master
-        master.title = ("Главное окно")
-        master.geometry = ("300x100")
+        self.user_data = user_data
+        master.title("Главное окно")
+        master.geometry("300x500")
 
-        user_info = f"Добро пожаловать, {user_data["first_name"]} {user_data["last_name"]}!"
+        user_info = f"Добро пожаловать, {user_data["first_name"]} {user_data["last_name"]}! \nЧто вы хотите сделать?"
 
-        ttk.Label(master, text=user_info, justify=tk.LEFT).pack(pady=20, padx=20)
-        ttk.Button(master, text="Выход", command=master.destroy).pack()
+        ttk.Label(master, text=user_info).place(x=85, y=20)
+        ttk.Button(master, text="Забронировать комнату",command=self.open_order_room).place(x=1, y=10)
+        ttk.Button(master, text="Выход", command=master.destroy).place(x=10, y=467)
+
+    def open_order_room(self, user_data):
+        root = tk.Tk()
+        OrderRoomWindow(root, user_data)
+        root.mainloop()
+
+class OrderRoomWindow:
+    def __init__(self, master, user_data):
+        self.master = master
+        self.user_data = user_data
+        master.title("Забронировать комнату")
+        master.geometry("600x400")
 
 if __name__ == "__main__":
     root = tk.Tk()
