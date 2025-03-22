@@ -1,35 +1,7 @@
 {
     "name": "Вежливый лось",
     "address": "ул. Попова 185",
-    "rooms": [
-        {
-            "room_number": "1",
-            "room_type": "Classic",
-            "price_per_night": 3000.0
-        },
-        {
-            "room_number": "2",
-            "room_type": "Classic",
-            "price_per_night": 5000.0
-        },
-        {
-            "room_number": "3",
-            "room_type": "Luxury",
-            "price_per_night": 10000.0
-        },
-        {
-            "room_number": "4",
-            "room_type": "Luxury",
-            "price_per_night": 15000.0
-        }
-    ],
-    "guests": [
-        {
-            "name": "Алексей",
-            "phone": "+79967073028",
-            "email": "Alecsey@gmail.com",
-            "bookings": []
-        }
-    ],
+    "rooms": [],
+    "guests": [],
     "bookings": []
 }

@@ -3,6 +3,18 @@ from tkinter import ttk, messagebox
 from datetime import datetime
 import json
 import os
+from abc import ABC, abstractmethod
+
+
+class Person(ABC):
+    def __init__(self, name, phone, email):
+        self.name = name
+        self.phone = phone
+        self.email = email
+
+    @abstractmethod
+    def to_dict(self):
+        pass
 
 class Room:
     def __init__(self, room_number, room_type, price_per_night):
@@ -24,11 +36,9 @@ class Room:
     def from_dict(cls, data):
         return cls(data["room_number"], data["room_type"], data["price_per_night"])
 
-class Guest:
+class Guest(Person):
     def __init__(self, name, phone, email):
-        self.name = name
-        self.phone = phone
-        self.email = email
+        super().__init__(name, phone, email)
         self.bookings = []
 
     def add_booking(self, booking):
